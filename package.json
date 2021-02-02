@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/joshgulledge/express-intro/issues"
   },
-  "homepage": "https://github.com/joshgulledge/express-intro#readme"
+  "homepage": "https://github.com/joshgulledge/express-intro#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
