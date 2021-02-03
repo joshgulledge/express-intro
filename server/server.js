@@ -27,5 +27,17 @@ app.listen(port, function () {
 
 app.get('/quotes', function (req, res) {
   console.log('GET request for quotes', req);
-  res.send(quotes());
+  res.send(quotes.getNextQuote());
+});
+
+app.post('/quotes', function (req, res) {
+  // body is already on req
+  let quote = req.body.quote_to_add;
+  console.log(quote.author);
+  console.log(quote.quote);
+
+  // add quote to data
+  quotes.addQuote(quote);
+  // respond
+  res.sendStatus(200);
 });
