@@ -10,7 +10,11 @@ function onReady() {
     method: 'GET',
   };
 
-  $.ajax(ajaxOptions);
+  $.ajax(ajaxOptions).then(function (response) {
+    console.log('got a response', response);
+  });
+
+  console.log('so much to do');
 }
 
 // grab data from server
