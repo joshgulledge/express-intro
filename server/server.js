@@ -1,4 +1,5 @@
 const express = require('express');
+const { quoteList } = require('./modules/quotes');
 // console.log(express);
 const quotes = require('./modules/quotes');
 
@@ -28,6 +29,17 @@ app.listen(port, function () {
 app.get('/quotes', function (req, res) {
   console.log('GET request for quotes', req);
   res.send(quotes.getNextQuote());
+});
+
+/*
+Get all the quotes
+return array with all quotes
+*/
+
+app.get('/allTheQuotes', function (req, res) {
+  console.log('get all the quotes');
+
+  res.send(quotes.quoteList);
 });
 
 app.post('/quotes', function (req, res) {
