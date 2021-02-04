@@ -45,8 +45,6 @@ app.get('/allTheQuotes', function (req, res) {
 app.post('/quotes', function (req, res) {
   // body is already on req
   let quote = req.body.quote_to_add;
-  console.log(quote.author);
-  console.log(quote.quote);
 
   // add quote to data
   quotes.addQuote(quote);

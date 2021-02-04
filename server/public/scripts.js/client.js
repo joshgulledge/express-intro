@@ -30,6 +30,7 @@ function onSubmit(e) {
   })
     .then(function (response) {
       console.log('Oh yea');
+      fetchQuotes();
     })
     .catch(function (error) {
       console.log('blaaahhh');
@@ -49,6 +50,8 @@ function fetchQuotes() {
       console.log('got a response', response);
 
       let quoteList = response;
+
+      $('ul').empty();
 
       for (let quote of quoteList) {
         console.log(quote);
